@@ -2,17 +2,28 @@ function CreateTags()
   exec ':!ctags -R ./*'
 endfunction
 
+filetype off
 syntax on
 set tags=./tags,tags;
 set number
 set mouse=a
 set expandtab
 set tabstop=2
-"set smartindent
+set shiftwidth=2
+set noerrorbells visualbell t_vb=
 "set cursorline
 set ru
+set nocindent
+set nosmartindent
+
 set laststatus=2
-set statusline=%4*%<\%m%<[%f\%r%h%w]\ [%{&ff},%{&fileencoding},%Y]%=\[Position=%l,%v,%p%%]
+highlight User1 ctermfg=Blue ctermbg=White guifg=Blue guibg=White
+highlight StatusLineNC cterm=none
+highlight PmenuSel ctermbg=Red
+highlight Pmenu ctermbg=Green
+highlight PmenuSbar ctermbg=Magenta
+highlight PmenuThumb ctermfg=Yellow
+set statusline=%1*%<\%m%<[%f\%r%h%w]\ [%{&ff},%Y]%=\[Position=%l,%v,%p%%]
 
 let Tlist_Use_Right_Window=1
 let Tlist_Show_One_File=1
@@ -101,7 +112,7 @@ Bundle "tpope/vim-fugitive"
 "Bundle "vim-scripts/Vim-R-plugin"
 "Bundle "kien/ctrlp.vim"
 "Bundle "majutsushi/tagbar.git"
-Bundle "chrisbra/color_highlight.git"
+"Bundle "chrisbra/color_highlight.git"
 "Bundle "vim-scripts/camelcasemotion.git"
 Bundle "garbas/vim-snipmate.git"
 Bundle "MarcWeber/vim-addon-mw-utils.git"
