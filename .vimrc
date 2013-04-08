@@ -2,6 +2,7 @@ function CreateTags()
   exec ':!ctags -R ./*'
 endfunction
 
+
 filetype off
 syntax on
 set tags=./tags,tags;
